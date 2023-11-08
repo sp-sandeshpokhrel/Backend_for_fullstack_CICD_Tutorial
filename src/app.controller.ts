@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -16,7 +16,7 @@ export class AppController {
   }
 
   @Get('sampledata/:data')
-  saveSampleData(data: string) {
+  saveSampleData(@Param('data') data: string) {
     return this.appService.saveSampleData(data);
   }
 }
