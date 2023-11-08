@@ -12,4 +12,12 @@ export class AppService {
   async getAllSampleData() {
     return await this.prisma.sampleData.findMany();
   }
+
+  async saveSampleData(data: string) {
+    return await this.prisma.sampleData.create({
+      data: {
+        text: data,
+      },
+    });
+  }
 }

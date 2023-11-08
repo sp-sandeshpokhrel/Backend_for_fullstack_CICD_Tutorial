@@ -14,4 +14,9 @@ export class AppController {
   getSampleData() {
     return this.appService.getAllSampleData();
   }
+
+  @Get('sampledata/:data')
+  saveSampleData(data: string) {
+    return this.appService.saveSampleData(data);
+  }
 }
